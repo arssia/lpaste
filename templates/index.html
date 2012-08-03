@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% block title %}New{% endblock %}
+{% block body %}
+    <div class="left-site">
+        <div class="new-item">
+            <h3>Paste a new item</h3>
+            <form action="/" method="post" name="pasteform">
+                <table>
+                    <tr>
+                        <td align="right">
+                            <label>Code</label>
+                        </td>
+                        <td>
+                            <textarea id="paste-area" class="vLargeTextField required" name="content" rows="10" cols="40"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <label>Syntax</label>
+                        </td>
+                        <td>
+                            <select name="language" size="1">
+                                <option value="">---------</option>
+                                <option value="C">C</option>
+                                <option value="C++">C++</option>
+                                <option value="Python" selected="selected">Python</option>
+                                <option value="PythonConsole">Python Interactive/Traceback</option>
+                                <option value="Sql">SQL</option>
+                                <option value="DjangoTemplate">Django Template/HTML</option>
+                                <option value="JScript">JavaScript</option>
+                                <option value="Css">CSS</option>
+                                <option value="Xml">XML</option>
+                                <option value="Diff">Diff</option>
+                                <option value="Ruby">Ruby</option>
+                                <option value="Rhtml">Ruby HTML (ERB)</option>
+                                <option value="Haskell">Haskell</option>
+                                <option value="Apache">Apache Config</option>
+                                <option value="Bash">Shell script</option>
+                                <option value="Java">Java</option>
+                                <option value="Lua">Lua</option>
+                                <option value="Scala">Scala</option>
+                                <option value="Erlang">Erlang</option>
+                                <option value="HTML">HTML</option>
+                                <option value="CSS">CSS</option>
+                                <option value="PHPTemplate">HTML+PHP</option>
+                                <option value="PHP">PHP</option>
+                                <option value="C#">C#</option>
+                                <option value="CommonLisp">CommonLisp</option>
+                                <option value="">Plain</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <label>Title</label>
+                        </td>
+                        <td>
+                            <input type="text" name="title" size="30" value="" maxlength="50" /></td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <label>Name/Email</label>
+                            </td>
+                            <td>
+                                <input type="text" name="poster" size="30" value="" maxlength="30" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <label>Hold</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="hold" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="submit" value="Paste it!" />
+                            </td>
+                        </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="right-site">
+        <div class="flash-messages">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

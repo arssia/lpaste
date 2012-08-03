@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}lpaste | item id: {{ item["_id"] }}{% endblock %}
+{% block body %}
+<div class="item-detail">
+        <div class="item-header">
+            {% if item['title'] %}
+                <span class="item-title">{{ item["title"] }}</span>
+            {% else %}
+                <span class="item-title">Unamed</span>
+            {% endif %}
+            {% if item['poster'] %}
+                <span class="item-poster">by {{ item["poster"] }}</span>
+            {% else %}
+                <span class="item-poster">by Anonymous</span>
+            {% endif %}
+            <span class="item-created_at"> on {{ item["created_at"] }}</span>
+            <span class="item-language">Language: {{ item["language"] }}</span>
+            <ul class="navbar">
+                <li><a href="{{ item["_id"] }}/delete">Delete</a></li>
+                <li><a href="{{ item["_id"] }}/plain" target="blank">Plain</a></li>
+                <li><a href="{{ item["_id"] }}/html" target="blank">Raw HTML</a></li>
+                <li><a href="/" target="blank" class="new-item">New</a></li>
+            </ul>
+        </div>
+        <div class="item-content">
+            {{ item["content"]|safe}}
+        </div>
+    </div>
+{% endblock %}

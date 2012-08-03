@@ -1,0 +1,3 @@
+A simple pastebin application with Werkzeug, Jinja2, Pygments and Pymongo.
+
+In order to deploy the application, see: http://werkzeug.pocoo.org/docs/deployment/
