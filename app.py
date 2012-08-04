@@ -116,6 +116,7 @@ class Application(object):
                 "PHP": "php",
                 "C#": "csharp",
                 "CommonLisp": "common-lisp",
+                "Plain": "text",
         }
         if language in aliases:
             return aliases[language]
